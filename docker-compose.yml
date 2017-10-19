@@ -1,0 +1,11 @@
+version: '2'
+services:
+  graphite:
+    image: bebehei/graphite:latest
+    restart: on-failure:5
+    hostname: graphite
+    volumes:
+      - ./graphite/lib:/var/lib/graphite
+      - ./graphite/log/apache:/var/log/apache2
+      - ./graphite/log/graphite:/var/log/graphite
+      - ./graphite/log/carbon:/var/log/carbon
